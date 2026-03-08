@@ -7,7 +7,7 @@ on: [push, workflow_dispatch]
 env:
   RESOURCE-GROUP: az2006-rg
   LOCATION: eastus
-  TEMPLATE-FILE: infra/webapp.bicep
+  TEMPLATE-FILE: infra/vmcreation.bicep
   SUBSCRIPTION-ID: 7b21d0f2-9cbc-458c-9083-1067c878f5df
   WEBAPP-NAME: az2006app21879
 
@@ -81,7 +81,7 @@ jobs:
         with:
           subscriptionId: ${{ env.SUBSCRIPTION-ID }}
           resourceGroupName: ${{ env.RESOURCE-GROUP }}
-          template: bicep-template/webapp.bicep
+          template: bicep-template/vmcreation.bicep
           parameters: "webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }}"
           failOnStdErr: false
 
