@@ -67,7 +67,7 @@ jobs:
       - name: Azure Login
         uses: azure/login@v2
         with: 
-          creds: ${{ secrets.GITHUB_TOKEN }}
+          creds: ${{ secrets.Azure_Credentials }}
 
       - name: Deploy VM using Bicep
         uses: azure/arm-deploy@v2
